@@ -1,0 +1,9 @@
+.product_card_container{
+    display: inline-block;
+    margin: 10px 15px;
+}
+
+.product_card_container a{
+    text-decoration: none;
+}
+

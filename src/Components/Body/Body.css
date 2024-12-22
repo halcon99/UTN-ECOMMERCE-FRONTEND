@@ -1,0 +1,21 @@
+.slider_container .slider{
+    margin: 0 200px;
+}
+
+.slider_container{
+    background-color: #F5F5F5;
+}
+
+.section-products{
+    padding-inline: 200px;
+}
+
+
+@media screen and (max-width: 1400px){
+    .section-products{
+        padding-inline: 0;
+    }
+    .slider_container .slider{
+        margin: 0
+    }
+}

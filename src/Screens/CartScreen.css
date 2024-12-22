@@ -1,0 +1,148 @@
+.cart-container{
+    padding-inline: 200px;
+    justify-items: center;
+}
+
+.cart{
+    display: flex;
+}
+
+
+
+.cart-product-info{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-between;
+    width: 700px;
+}
+
+.cart-product-info img{
+    height: 100%;
+    width: 100px;
+    object-fit: cover; 
+}
+
+.cart-product-info h4{
+    width: 25%; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+}
+
+.cart-product-info .button{
+    height: 30px;
+    width: 40px;
+}
+
+.delete-button{
+    background-color: red;
+    height: 30px;
+    width: 65px;
+    border-radius: 5px;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.cart-buttons button{
+    margin: 0px 5px;
+}
+
+.cart-buy-info{
+    background-color: #F5F5F7;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+}
+
+.cart-buy-info p{
+    padding: 15px 0;
+}
+
+.cart-buy-info button{
+    height: 50px;
+    width: 200px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.finalizar-compra{
+    color: rgb(255, 255, 255);
+    background-color: #440099;
+    cursor: pointer;
+}
+
+.vaciar-carrito{
+    cursor: pointer;
+    background-color: #FFFFFF;
+}
+
+.vaciar-carrito:hover{
+    background-color: #8D8DA6;
+}
+
+
+
+
+
+@media screen and (max-width: 950px){
+    .cart-container{
+        padding-inline: 20px; 
+    }
+
+    .cart{
+        flex-direction: column; 
+    }
+
+    .cart-buy-info{
+        margin-top: 20px;
+        align-items: center;
+    }
+
+    .cart-product-info{
+        width: 100%; 
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    .cart-product-info h4{
+        width: 100%; 
+    }
+}
+
+
+@media screen and (max-width: 480px){
+    .cart-product-info img{
+        width: 80px; 
+    }
+
+    .cart-buy-info button{
+        width: 100%; 
+    }
+
+    .cart-product-info{
+        gap: 10px;
+    }
+
+}
+
+
+@media screen and (max-width: 320px){
+    .cart-container{
+        padding-inline: 10px;
+    }
+
+    .cart-product-info img{
+        width: 60px; 
+    }
+
+    .cart-product-info h4{
+        font-size: 12px; 
+    }
+
+    .cart-buy-info button{
+        font-size: 12px;
+        height: 40px;
+    }
+}
