@@ -36,24 +36,32 @@ export const RegisterScreen = () => {
 
 
         if (!data.ok){
-            if (data.data.registerState.name.errors){
-                setErrorsState((prevState)=>{
-                    return {...prevState, name: data.data.registerState.name.errors[0].message}
-                })
+            if (data.data?.registerState){
+                if (data.data.registerState.name?.errors?.length > 0){
+                    setErrorsState((prevState)=>{
+                        return {...prevState, name: data.data.registerState.name.errors[0].message}
+                    })
+                }
+                if (data.data.registerState.password?.errors?.length > 0){
+                    setErrorsState((prevState)=>{
+                        return {...prevState, password: data.data.registerState.password.errors[0].message}
+                    })
+                }
             }
-            if (data.data.registerState.password.errors){
-                setErrorsState((prevState)=>{
-                    return {...prevState, password: data.data.registerState.password.errors[0].message}
-                })
-            }
-            if (data.status == 0){
+        
+            if (data.status === 0 && data.data?.detail){
                 setErrorsState((prevState)=>{
                     return {...prevState, email: data.data.detail}
                 })
+            }else if (data.message === "Email already registered"){
+                setErrorsState((prevState)=>{
+                    return {...prevState, email: data.data.detail || "El email ya está registrado"}
+                })
             }
         }else{
-            navigate('/login')  
+            navigate('/login')
         }
+        
        
     }
     
