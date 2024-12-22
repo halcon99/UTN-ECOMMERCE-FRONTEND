@@ -46,6 +46,11 @@ export const RegisterScreen = () => {
                     return {...prevState, password: data.data.registerState.password.errors[0].message}
                 })
             }
+            if (data.data.detail){
+                setErrorsState((prevState)=>{
+                    return {...prevState, email: data.data.detail}
+                })
+            }
         }else{
             navigate('/login')  
         }
