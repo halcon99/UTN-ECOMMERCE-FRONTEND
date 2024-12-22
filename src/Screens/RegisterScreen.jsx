@@ -46,7 +46,7 @@ export const RegisterScreen = () => {
                     return {...prevState, password: data.data.registerState.password.errors[0].message}
                 })
             }
-            if (data.data.detail){
+            if (data.status == 0){
                 setErrorsState((prevState)=>{
                     return {...prevState, email: data.data.detail}
                 })
