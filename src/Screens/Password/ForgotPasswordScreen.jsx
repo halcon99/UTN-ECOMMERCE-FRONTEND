@@ -12,12 +12,12 @@ export const ForgotPasswordScreen = () => {
     const handleForgotPassword= async (event)=>{
         const response= await fetch(import.meta.env.VITE_API_URL + '/api/auth/forgot-password',
             {
-                method: 'PUT',
+                method: 'POST',
                 headers:{
                     "Content-type": "application/json"
                 },
                 body:JSON.stringify({
-                    password: formState.email
+                    email: formState.email
                 })
             }
         )

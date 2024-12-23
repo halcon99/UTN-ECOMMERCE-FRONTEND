@@ -19,7 +19,7 @@ export const RecoveryPasswordScreen = () => {
                     "Content-type": "application/json"
                 },
                 body:JSON.stringify({
-                    password: formState.password,
+                    form: formState.password,
                     reset_token    
                 })
             }
