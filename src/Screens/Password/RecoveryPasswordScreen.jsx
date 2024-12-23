@@ -1,9 +1,10 @@
 import React from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import useForm from '../../Hooks/useForm'
 
 export const RecoveryPasswordScreen = () => {
     const {reset_token}= useParams()
+    const navigate= useNavigate()
 
     const {formState, handleChange}= useForm({
         password: ''
@@ -12,21 +13,26 @@ export const RecoveryPasswordScreen = () => {
 
     const handleRecoveryPassword= async (event)=>{
         event.preventDefault()
-        const response= await fetch(import.meta.env.VITE_API_URL + '/api/auth/recovery-password/',
+        const response= await fetch(import.meta.env.VITE_API_URL + '/api/auth/recovery-password',
             {
                 method: 'PUT',
                 headers:{
                     "Content-type": "application/json"
                 },
-                body:JSON.stringify({
-                    form: formState.password,
+                body: JSON.stringify({
+                    password: formState.password,
                     reset_token    
                 })
             }
             
         )
         const data= await response.json()
-        console.log({data})
+        console.log(data)
+        alert(data.message)
+
+        if (data.ok){
+            navigate('/login')
+        }
     }   
 
     
